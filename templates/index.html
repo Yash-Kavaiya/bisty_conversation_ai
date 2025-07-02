@@ -3,32 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Google AI Assistant powered by Dialogflow - Advanced conversational AI with voice, text, and screen capture capabilities">
-    <meta name="keywords" content="AI, Dialogflow, Google Assistant, Voice Recognition, Screen Capture, Chatbot">
-    <meta name="author" content="Google AI Team">
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Best Buy Client Support - AI-powered customer service with advanced chat capabilities">
+    <meta name="keywords" content="Best Buy, Customer Support, AI Assistant, Electronics, Technology">
+    <meta name="author" content="Best Buy Support Team">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:; media-src 'self' blob:;">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <title>Google AI Assistant | Dialogflow Chat Interface</title>
+    <title>Best Buy Client Support | AI Assistant</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Tailwind Config -->
     <script>
@@ -36,174 +28,359 @@
             theme: {
                 extend: {
                     colors: {
-                        'google-blue': '#4285F4',
-                        'google-red': '#EA4335',
-                        'google-yellow': '#FBBC04',
-                        'google-green': '#34A853',
-                        'google-gray': '#5F6368',
-                        'google-light-gray': '#F8F9FA',
-                        'google-dark-gray': '#202124',
-                        'google-border': '#DADCE0'
+                        'bestbuy-blue': '#0046BE',
+                        'bestbuy-blue-dark': '#003399',
+                        'bestbuy-blue-light': '#0066FF',
+                        'bestbuy-yellow': '#FFE600',
+                        'bestbuy-yellow-dark': '#E6CF00',
+                        'bestbuy-yellow-light': '#FFF44D',
+                        'bestbuy-gray': '#5A6670',
+                        'bestbuy-gray-light': '#F8F9FA',
+                        'bestbuy-gray-dark': '#1C1C1C',
+                        'bestbuy-navy': '#002244',
+                        'bestbuy-silver': '#E8EAED'
+                    },
+                    fontFamily: {
+                        'bestbuy': ['Humanist 777', 'Arial', 'Helvetica', 'sans-serif']
+                    },
+                    backgroundImage: {
+                        'bestbuy-gradient': 'linear-gradient(135deg, #0046BE 0%, #0066FF 50%, #FFE600 100%)',
+                        'bestbuy-blue-gradient': 'linear-gradient(135deg, #003399 0%, #0046BE 50%, #0066FF 100%)',
+                        'bestbuy-yellow-gradient': 'linear-gradient(135deg, #E6CF00 0%, #FFE600 50%, #FFF44D 100%)',
+                        'bestbuy-dark-gradient': 'linear-gradient(135deg, #002244 0%, #0046BE 100%)',
+                        'bestbuy-hero-gradient': 'linear-gradient(45deg, #0046BE 0%, #FFE600 25%, #0046BE 50%, #FFE600 75%, #0046BE 100%)'
                     },
                     animation: {
-                        'spin-slow': 'spin 3s linear infinite',
-                        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'bounce-gentle': 'bounce 2s infinite',
+                        'slide-in': 'slideIn 0.3s ease-out',
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite'
                     },
                     keyframes: {
-                        'fade-in': {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        slideIn: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' }
                         }
                     }
                 }
             }
         }
     </script>
-    
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="/static/css/styles.css">
-    
-    <!-- Performance monitoring -->
-    <script>
-        window.addEventListener('load', function() {
-            const loadTime = performance.now();
-            console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
-        });
-    </script>
+
+    <style>
+        /* Best Buy Custom Styles */
+        :root {
+            --bestbuy-blue: #0046BE;
+            --bestbuy-yellow: #FFE600;
+            --bestbuy-shadow: 0 4px 20px rgba(0, 70, 190, 0.15);
+            --bestbuy-shadow-hover: 0 8px 30px rgba(0, 70, 190, 0.25);
+        }
+
+        body {
+            font-family: 'Humanist 777', Arial, Helvetica, sans-serif;
+        }
+
+        /* Enhanced scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--bestbuy-blue), var(--bestbuy-yellow));
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #003399, #E6CF00);
+        }
+
+        /* Best Buy button effects */
+        .bestbuy-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .bestbuy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--bestbuy-shadow-hover);
+        }
+
+        .bestbuy-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .bestbuy-btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Typing indicator animation */
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+
+        .typing-dot:nth-child(1) { 
+            background-color: var(--bestbuy-blue);
+            animation-delay: 0s; 
+        }
+        .typing-dot:nth-child(2) { 
+            background-color: var(--bestbuy-yellow);
+            animation-delay: 0.2s; 
+        }
+        .typing-dot:nth-child(3) { 
+            background-color: var(--bestbuy-blue);
+            animation-delay: 0.4s; 
+        }
+
+        @keyframes typing {
+            0%, 80%, 100% { 
+                transform: scale(0.8);
+                opacity: 0.6;
+            }
+            40% { 
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        /* Message animations */
+        .message-enter {
+            animation: slideInMessage 0.3s ease-out;
+        }
+
+        @keyframes slideInMessage {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Enhanced gradient backgrounds */
+        .bestbuy-hero-bg {
+            background: linear-gradient(135deg, #0046BE 0%, #0066FF 25%, #FFE600 50%, #0046BE 75%, #0066FF 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Enhanced shadows */
+        .bestbuy-shadow {
+            box-shadow: var(--bestbuy-shadow);
+        }
+
+        .bestbuy-shadow:hover {
+            box-shadow: var(--bestbuy-shadow-hover);
+        }
+
+        /* Loading spinner */
+        .bestbuy-spinner {
+            border: 3px solid rgba(0, 70, 190, 0.1);
+            border-top: 3px solid var(--bestbuy-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Toast notifications */
+        .toast-slide-in {
+            animation: toastSlideIn 0.3s ease-out;
+        }
+
+        @keyframes toastSlideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Enhanced focus states */
+        .bestbuy-focus:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: var(--bestbuy-blue);
+            ring-offset: 2px;
+        }
+
+        /* Mobile menu animation */
+        .mobile-menu-enter {
+            animation: mobileMenuSlide 0.3s ease-out;
+        }
+
+        @keyframes mobileMenuSlide {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
 </head>
-<body class="bg-google-light-gray antialiased" role="application" aria-label="Google AI Assistant">
-    <!-- Loading Spinner -->
+
+<body class="bg-gray-50 font-bestbuy">
+    <!-- Loading Screen -->
     <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
         <div class="text-center">
-            <div class="inline-block animate-spin rounded-full h-16 w-16 border-b-4 border-google-blue mb-4"></div>
-            <p class="text-google-gray text-lg">Loading Google AI Assistant...</p>
+            <div class="bestbuy-spinner w-16 h-16 mb-4 mx-auto"></div>
+            <div class="text-bestbuy-blue text-xl font-semibold mb-2">Best Buy Support</div>
+            <p class="text-bestbuy-gray">Loading your assistant...</p>
         </div>
     </div>
 
     <!-- Main Container -->
-    <div class="flex h-screen overflow-hidden">
+    <div class="flex h-screen bg-gray-50">
         <!-- Sidebar -->
-        <aside id="sidebar" class="sidebar-gradient w-64 flex flex-col h-full text-white" role="navigation" aria-label="Navigation sidebar">
-            <!-- Logo -->
-            <div class="p-4 flex items-center justify-center border-b border-white/10">
-                <div class="text-xl font-bold flex items-center gap-2">
-                    <i class="fab fa-google text-2xl" aria-hidden="true"></i>
-                    <span>AI Support Agent</span>
-                </div>
+        <aside id="sidebar" class="bg-bestbuy-dark-gradient w-72 flex flex-col text-white shadow-2xl relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"%23ffffff\" fill-opacity=\"0.1\"><circle cx=\"20\" cy=\"20\" r=\"2\"/></g></svg>'); background-repeat: repeat;"></div>
             </div>
-            
-            <!-- New Chat Button -->
-            <div class="p-2">
-                <button id="new-chat-btn" 
-                        class="w-full flex items-center justify-center gap-3 rounded-md p-3 bg-white/10 hover:bg-white/20 focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-200 ripple"
-                        aria-label="Start new conversation">
-                    <i class="fas fa-plus" aria-hidden="true"></i>
-                    <span>New conversation</span>
+
+            <!-- Header -->
+            <div class="relative z-10 p-6 border-b border-white/10">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-12 h-12 bg-bestbuy-yellow rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                        <i class="fas fa-shopping-cart text-bestbuy-blue text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold">Best Buy</h1>
+                        <p class="text-sm text-white/70">Client Support</p>
+                    </div>
+                </div>
+                
+                <!-- New Chat Button -->
+                <button id="new-chat-btn" class="w-full bg-bestbuy-yellow hover:bg-bestbuy-yellow-dark text-bestbuy-blue font-semibold py-3 px-4 rounded-lg transition-all duration-200 bestbuy-btn flex items-center justify-center gap-2">
+                    <i class="fas fa-plus"></i>
+                    <span>New Conversation</span>
                 </button>
             </div>
 
             <!-- Chat History -->
-            <div class="flex-1 overflow-y-auto p-2 space-y-2" role="region" aria-label="Chat history">
-                <div id="chat-history" class="space-y-2">
-                    <!-- Chat history items will be added here dynamically -->
+            <div class="relative z-10 flex-1 overflow-y-auto p-4">
+                <div class="mb-4">
+                    <h3 class="text-sm font-semibold text-white/60 uppercase tracking-wide mb-3">Recent Chats</h3>
+                    <div id="chat-history" class="space-y-2">
+                        <!-- Chat history items will be populated here -->
+                    </div>
                 </div>
                 
-                <!-- Empty state -->
-                <div id="empty-history" class="hidden text-center py-8 text-white/60">
-                    <i class="fas fa-comments text-3xl mb-2" aria-hidden="true"></i>
+                <!-- Empty State -->
+                <div id="empty-history" class="text-center py-8 text-white/60">
+                    <i class="fas fa-comments text-4xl mb-3 text-white/30"></i>
                     <p class="text-sm">No conversations yet</p>
-                    <p class="text-xs mt-1">Start chatting to see history</p>
+                    <p class="text-xs mt-1">Start chatting to see your history</p>
                 </div>
             </div>
 
-            <!-- Settings and Actions -->
-            <div class="border-t border-white/10 p-4 space-y-3">
-                <!-- Reset Conversations -->
-                <button id="reset-conversations-btn" 
-                        class="w-full flex items-center gap-3 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg p-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
-                        aria-label="Reset all conversations">
-                    <i class="fas fa-trash-alt text-google-red" aria-hidden="true"></i>
-                    <span>Reset All Conversations</span>
-                </button>
-                
-                <!-- User Profile -->
-                <div class="flex items-center justify-between">
-                    <button class="flex items-center gap-2 hover:text-google-yellow transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 rounded p-1"
-                            aria-label="User profile">
-                        <i class="fas fa-user" aria-hidden="true"></i>
-                        <span>Your Profile</span>
-                    </button>
-                    <button class="hover:text-google-yellow transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 rounded p-1"
-                            aria-label="Settings">
-                        <i class="fas fa-cog" aria-hidden="true"></i>
+            <!-- Footer -->
+            <div class="relative z-10 border-t border-white/10 p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-bestbuy-yellow rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-bestbuy-blue text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium">Support Agent</p>
+                            <p class="text-xs text-white/60">Online</p>
+                        </div>
+                    </div>
+                    <button class="text-white/60 hover:text-white transition-colors">
+                        <i class="fas fa-cog"></i>
                     </button>
                 </div>
+                
+                <button id="clear-history-btn" class="w-full text-left text-sm text-white/60 hover:text-white transition-colors py-2">
+                    <i class="fas fa-trash-alt mr-2"></i>
+                    Clear All History
+                </button>
             </div>
         </aside>
 
         <!-- Main Chat Area -->
-        <main class="flex-1 flex flex-col h-full bg-white" role="main">
+        <main class="flex-1 flex flex-col bg-white">
             <!-- Header -->
-            <header class="bg-white shadow-sm p-4 flex justify-between items-center border-b border-google-border">
+            <header class="bg-white border-b border-gray-200 p-4 flex items-center justify-between shadow-sm">
                 <div class="flex items-center gap-3">
-                    <button id="menu-toggle" 
-                            class="text-google-gray hover:text-google-blue transition-colors md:hidden focus:outline-none focus:ring-2 focus:ring-google-blue rounded p-1"
-                            aria-label="Toggle sidebar menu">
-                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    <button id="menu-toggle" class="text-bestbuy-gray hover:text-bestbuy-blue transition-colors md:hidden">
+                        <i class="fas fa-bars text-xl"></i>
                     </button>
-                    <h1 id="current-chat-title" class="text-google-dark-gray text-lg font-medium">New Conversation</h1>
-                    <div id="conversation-status" class="hidden text-xs text-google-gray bg-google-light-gray px-2 py-1 rounded-full">
-                        <i class="fas fa-circle text-google-green text-xs" aria-hidden="true"></i>
-                        <span>Active</span>
+                    <div>
+                        <h2 id="current-chat-title" class="text-xl font-semibold text-bestbuy-gray-dark">Best Buy Assistant</h2>
+                        <p class="text-sm text-bestbuy-gray">Here to help with all your tech needs</p>
                     </div>
                 </div>
                 
                 <div class="flex items-center gap-3">
-                    <!-- Download Transcript -->
-                    <button id="download-transcript-btn" 
-                            class="text-google-gray hover:text-google-blue transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-google-blue rounded p-2"
-                            aria-label="Download conversation transcript"
-                            disabled>
-                        <i class="fas fa-download" aria-hidden="true"></i>
-                        <span class="sr-only">Download Transcript</span>
+                    <div class="flex items-center gap-2 bg-green-50 text-green-600 px-3 py-1 rounded-full text-sm">
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span>Online</span>
+                    </div>
+                    
+                    <button id="export-chat-btn" class="text-bestbuy-gray hover:text-bestbuy-blue transition-colors p-2 rounded-lg hover:bg-gray-50" title="Export Chat">
+                        <i class="fas fa-download"></i>
                     </button>
                     
-                    <!-- Conversation Info -->
-                    <button id="conversation-info-btn" 
-                            class="text-google-gray hover:text-google-blue transition-colors focus:outline-none focus:ring-2 focus:ring-google-blue rounded p-2"
-                            aria-label="Conversation information">
-                        <i class="fas fa-info-circle" aria-hidden="true"></i>
-                    </button>
-                    
-                    <!-- More Options -->
                     <div class="relative">
-                        <button id="more-options-btn" 
-                                class="text-google-gray hover:text-google-blue transition-colors focus:outline-none focus:ring-2 focus:ring-google-blue rounded p-2"
-                                aria-label="More options"
-                                aria-expanded="false"
-                                aria-haspopup="true">
-                            <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+                        <button id="more-options-btn" class="text-bestbuy-gray hover:text-bestbuy-blue transition-colors p-2 rounded-lg hover:bg-gray-50">
+                            <i class="fas fa-ellipsis-v"></i>
                         </button>
-                        
-                        <!-- Dropdown Menu -->
-                        <div id="more-options-menu" 
-                             class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-google-border z-20"
-                             role="menu"
-                             aria-orientation="vertical">
-                            <button class="w-full text-left px-4 py-2 text-sm text-google-gray hover:bg-google-light-gray rounded-t-lg focus:outline-none focus:bg-google-light-gray"
-                                    role="menuitem">
-                                <i class="fas fa-copy mr-2" aria-hidden="true"></i>
-                                Copy Conversation
-                            </button>
-                            <button class="w-full text-left px-4 py-2 text-sm text-google-gray hover:bg-google-light-gray focus:outline-none focus:bg-google-light-gray"
-                                    role="menuitem">
-                                <i class="fas fa-share mr-2" aria-hidden="true"></i>
+                        <div id="more-options-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-20">
+                            <button class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                <i class="fas fa-share text-bestbuy-blue"></i>
                                 Share Conversation
                             </button>
-                            <button class="w-full text-left px-4 py-2 text-sm text-google-red hover:bg-red-50 rounded-b-lg focus:outline-none focus:bg-red-50"
-                                    role="menuitem">
-                                <i class="fas fa-trash mr-2" aria-hidden="true"></i>
+                            <button class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                <i class="fas fa-star text-bestbuy-yellow"></i>
+                                Save Conversation
+                            </button>
+                            <button class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2 text-red-600">
+                                <i class="fas fa-trash"></i>
                                 Delete Conversation
                             </button>
                         </div>
@@ -211,471 +388,845 @@
                 </div>
             </header>
 
-            <!-- Messages Area -->
-            <div id="messages-container" 
-                 class="flex-1 overflow-y-auto p-4 space-y-6 bg-google-light-gray scroll-smooth"
-                 role="log"
-                 aria-live="polite"
-                 aria-label="Conversation messages">
+            <!-- Messages Container -->
+            <div id="messages-container" class="flex-1 overflow-y-auto p-6 space-y-4 bg-gray-50">
                 <!-- Welcome Message -->
-                <div class="flex items-start gap-4 bot-message" role="article" aria-label="Welcome message">
-                    <div class="avatar-gradient w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <i class="fab fa-google text-white" aria-hidden="true"></i>
+                <div class="flex items-start gap-3 message-enter">
+                    <div class="w-10 h-10 bg-bestbuy-blue-gradient rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i class="fas fa-robot text-white"></i>
                     </div>
                     <div class="flex-1">
-                        <div class="prose max-w-none">
-                            <p>Hello! I'm your Google AI assistant powered by Dialogflow. How can I help you today?</p>
+                        <div class="bg-white rounded-2xl rounded-tl-sm p-4 shadow-sm border border-gray-100">
+                            <div class="prose max-w-none">
+                                <p class="text-bestbuy-gray-dark mb-2">👋 <strong>Welcome to Best Buy Support!</strong></p>
+                                <p class="text-bestbuy-gray">I'm your AI assistant, ready to help you with:</p>
+                                <ul class="text-bestbuy-gray text-sm mt-2 space-y-1">
+                                    <li>🛍️ Product recommendations and comparisons</li>
+                                    <li>🔧 Technical support and troubleshooting</li>
+                                    <li>📱 Device setup and configuration</li>
+                                    <li>🚚 Order status and delivery information</li>
+                                    <li>💳 Returns, exchanges, and warranty questions</li>
+                                </ul>
+                                <p class="text-bestbuy-gray mt-3">How can I assist you today?</p>
+                            </div>
                         </div>
-                        <div class="text-xs text-google-gray mt-2">
-                            <time datetime="" id="welcome-time"></time>
+                        <div class="text-xs text-bestbuy-gray mt-2 flex items-center gap-2">
+                            <span id="welcome-time"></span>
+                            <button class="hover:text-bestbuy-blue transition-colors" title="Copy message">
+                                <i class="fas fa-copy"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <!-- Messages will be added here dynamically -->
             </div>
 
             <!-- Typing Indicator -->
-            <div id="typing-container" class="hidden px-4 py-2 bg-google-light-gray">
-                <div class="flex items-center gap-2 text-google-gray text-sm">
-                    <div class="typing-indicator">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+            <div id="typing-indicator" class="hidden px-6 py-2">
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 bg-bestbuy-blue-gradient rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <i class="fas fa-robot text-white text-sm"></i>
                     </div>
-                    <span>AI is typing...</span>
+                    <div class="bg-white rounded-2xl rounded-tl-sm p-4 shadow-sm border border-gray-100">
+                        <div class="flex items-center gap-1">
+                            <span class="typing-dot"></span>
+                            <span class="typing-dot"></span>
+                            <span class="typing-dot"></span>
+                            <span class="text-bestbuy-gray text-sm ml-2">Assistant is typing...</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Input Area -->
-            <footer class="border-t border-google-border bg-white p-4" role="contentinfo">
-                <!-- Attachment Preview -->
-                <div id="attachment-preview" class="hidden mb-3 p-3 bg-google-light-gray rounded-lg border border-google-border animate-fade-in">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <i class="fas fa-file-alt text-google-blue mr-2 text-lg" aria-hidden="true"></i>
-                            <span id="attachment-name" class="text-base text-google-dark-gray truncate max-w-[250px]"></span>
-                            <span id="attachment-size" class="text-xs text-google-gray ml-2"></span>
+            <div class="border-t border-gray-200 bg-white p-4">
+                <!-- Attachment Previews -->
+                <div id="attachment-previews" class="mb-4 space-y-2">
+                    <!-- File attachment preview -->
+                    <div id="file-preview" class="hidden bg-bestbuy-gray-light rounded-lg p-3 border border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-file text-bestbuy-blue"></i>
+                                <span id="file-name" class="text-sm font-medium"></span>
+                                <span id="file-size" class="text-xs text-bestbuy-gray"></span>
+                            </div>
+                            <button id="remove-file" class="text-red-500 hover:text-red-700">
+                                <i class="fas fa-times"></i>
+                            </button>
                         </div>
-                        <button id="remove-attachment" 
-                                class="text-google-gray hover:text-google-red text-lg focus:outline-none focus:ring-2 focus:ring-google-red rounded"
-                                aria-label="Remove attachment">
-                            <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
+                    </div>
+
+                    <!-- Image preview -->
+                    <div id="image-preview" class="hidden bg-bestbuy-gray-light rounded-lg p-3 border border-gray-200">
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-image text-bestbuy-blue"></i>
+                                <span class="text-sm font-medium">Image attached</span>
+                            </div>
+                            <button id="remove-image" class="text-red-500 hover:text-red-700">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <img id="image-thumbnail" class="max-w-32 max-h-32 rounded-lg border border-gray-300" alt="Image preview">
                     </div>
                 </div>
 
-                <!-- Screenshot Preview -->
-                <div id="screenshot-preview" class="hidden mb-3 p-3 bg-google-light-gray rounded-lg border border-google-border animate-fade-in">
-                    <div class="flex items-center justify-between mb-2">
-                        <div class="flex items-center">
-                            <i class="fas fa-camera text-google-green mr-2 text-lg" aria-hidden="true"></i>
-                            <span class="text-base text-google-dark-gray">Screenshot captured</span>
-                            <span id="screenshot-size" class="text-xs text-google-gray ml-2"></span>
-                        </div>
-                        <button id="remove-screenshot" 
-                                class="text-google-gray hover:text-google-red text-lg focus:outline-none focus:ring-2 focus:ring-google-red rounded"
-                                aria-label="Remove screenshot">
-                            <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                    <div class="bg-white rounded-lg p-2 border border-google-border">
-                        <img id="screenshot-thumbnail" 
-                             class="max-w-full h-32 object-contain rounded" 
-                             alt="Screenshot preview"
-                             loading="lazy">
-                    </div>
-                </div>
-
-                <!-- Camera Photo Preview -->
-                <div id="camera-preview" class="hidden mb-3 p-3 bg-google-light-gray rounded-lg border border-google-border animate-fade-in">
-                    <div class="flex items-center justify-between mb-2">
-                        <div class="flex items-center">
-                            <i class="fas fa-camera text-google-blue mr-2 text-lg" aria-hidden="true"></i>
-                            <span class="text-base text-google-dark-gray">Photo captured</span>
-                            <span id="camera-photo-size" class="text-xs text-google-gray ml-2"></span>
-                        </div>
-                        <button id="remove-camera-photo" 
-                                class="text-google-gray hover:text-google-red text-lg focus:outline-none focus:ring-2 focus:ring-google-red rounded"
-                                aria-label="Remove photo">
-                            <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                    <div class="bg-white rounded-lg p-2 border border-google-border">
-                        <img id="camera-photo-thumbnail" 
-                             class="max-w-full h-32 object-contain rounded" 
-                             alt="Camera photo preview"
-                             loading="lazy">
-                    </div>
-                </div>
-                
                 <!-- Input Container -->
                 <div class="relative">
-                    <label for="message-input" class="sr-only">Type your message</label>
-                    <textarea 
-                        id="message-input" 
-                        rows="1" 
-                        class="w-full border border-google-border rounded-lg p-3 pr-40 resize-none focus:outline-none focus:ring-2 focus:ring-google-blue focus:border-transparent transition-all duration-200"
-                        placeholder="Type your message..."
-                        aria-label="Message input"
-                        maxlength="4000"
-                        autocomplete="off"
-                        spellcheck="true"></textarea>
-                    
-                    <!-- Character Counter -->
-                    <div id="char-counter" class="absolute bottom-1 left-3 text-xs text-google-gray">
-                        <span id="char-count">0</span>/4000
-                    </div>
-                    
-                    <!-- File Input -->
-                    <input type="file" 
-                           id="file-input" 
-                           class="hidden" 
-                           accept="*/*" 
-                           aria-label="File upload">
-                    
-                    <!-- Action Buttons -->
-                    <div class="absolute right-2 bottom-1.5 flex items-center space-x-1">
-                        <button id="attachment-button" 
-                                class="p-2 text-google-gray hover:text-google-blue transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-google-blue" 
-                                title="Attach file"
-                                aria-label="Attach file">
-                            <i class="fas fa-paperclip" aria-hidden="true"></i>
-                        </button>
+                    <div class="flex items-end gap-3">
+                        <!-- File Input -->
+                        <input type="file" id="file-input" class="hidden" accept="*/*">
                         
-                        <button id="screenshot-button" 
-                                class="p-2 text-google-gray hover:text-google-green transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-google-green" 
-                                title="Take screenshot"
-                                aria-label="Take screenshot">
-                            <i class="fas fa-camera" aria-hidden="true"></i>
+                        <!-- Attachment Button -->
+                        <button id="attachment-btn" class="flex-shrink-0 w-10 h-10 bg-gray-100 hover:bg-gray-200 text-bestbuy-gray hover:text-bestbuy-blue rounded-lg flex items-center justify-center transition-colors bestbuy-focus" title="Attach file">
+                            <i class="fas fa-paperclip"></i>
                         </button>
-                        
-                        <button id="camera-button" 
-                                class="p-2 text-google-gray hover:text-google-blue transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-google-blue" 
-                                title="Take photo with camera"
-                                aria-label="Take photo with camera">
-                            <i class="fas fa-video" aria-hidden="true"></i>
+
+                        <!-- Message Input -->
+                        <div class="flex-1 relative">
+                            <textarea 
+                                id="message-input" 
+                                rows="1" 
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 pr-12 resize-none focus:outline-none focus:ring-2 focus:ring-bestbuy-blue focus:border-transparent transition-all duration-200 bg-white"
+                                placeholder="Ask me anything about Best Buy products or services..."
+                                maxlength="4000"></textarea>
+                            
+                            <!-- Character counter -->
+                            <div id="char-counter" class="absolute bottom-1 right-3 text-xs text-bestbuy-gray">
+                                <span id="char-count">0</span>/4000
+                            </div>
+                        </div>
+
+                        <!-- Voice Input Button -->
+                        <button id="voice-btn" class="flex-shrink-0 w-10 h-10 bg-gray-100 hover:bg-gray-200 text-bestbuy-gray hover:text-bestbuy-blue rounded-lg flex items-center justify-center transition-colors bestbuy-focus" title="Voice input">
+                            <i class="fas fa-microphone"></i>
                         </button>
-                        
-                        <button id="screen-capture-button" 
-                                class="p-2 text-google-gray hover:text-google-yellow transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-google-yellow" 
-                                title="Share screen"
-                                aria-label="Share screen">
-                            <i class="fas fa-desktop" aria-hidden="true"></i>
-                        </button>
-                        
-                        <button id="voice-button" 
-                                class="p-2 text-google-gray hover:text-google-red transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-google-red" 
-                                title="Voice input"
-                                aria-label="Voice input">
-                            <i class="fas fa-microphone" aria-hidden="true"></i>
-                        </button>
-                        
-                        <button id="send-button" 
-                                class="p-2 button-gradient text-white rounded-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-8 h-8 focus:outline-none focus:ring-2 focus:ring-blue-500 ripple"
-                                aria-label="Send message"
-                                disabled>
-                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+
+                        <!-- Send Button -->
+                        <button id="send-btn" class="flex-shrink-0 w-10 h-10 bg-bestbuy-blue-gradient hover:bg-bestbuy-blue text-white rounded-lg flex items-center justify-center transition-all duration-200 bestbuy-btn disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                            <i class="fas fa-paper-plane"></i>
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- Footer Info -->
-                <div class="text-xs text-google-gray text-center mt-2 flex items-center justify-center gap-4">
-                    <span>Powered by Google Dialogflow & Cloud AI</span>
-                    <span>•</span>
-                    <button id="privacy-info" class="hover:text-google-blue transition-colors underline focus:outline-none focus:ring-2 focus:ring-google-blue rounded">
-                        Privacy Info
-                    </button>
+                <div class="mt-3 text-center">
+                    <p class="text-xs text-bestbuy-gray">
+                        🔒 Your conversations are secure and private • 
+                        <button class="text-bestbuy-blue hover:underline">Privacy Policy</button> • 
+                        <button class="text-bestbuy-blue hover:underline">Terms of Service</button>
+                    </p>
                 </div>
-            </footer>
+            </div>
         </main>
     </div>
 
     <!-- Voice Input Modal -->
-    <div id="voice-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="voice-modal-title">
-        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md google-shadow">
-            <div class="flex justify-between items-center mb-4">
-                <h3 id="voice-modal-title" class="text-xl font-medium text-google-dark-gray">Voice Input</h3>
-                <button id="close-voice-modal" 
-                        class="text-google-gray hover:text-google-red focus:outline-none focus:ring-2 focus:ring-google-red rounded"
-                        aria-label="Close voice input">
-                    <i class="fas fa-times" aria-hidden="true"></i>
-                </button>
-            </div>
-            
-            <!-- Recording visualization -->
-            <div class="bg-google-light-gray rounded-lg p-4 mb-4 border border-google-border">
-                <div id="waveform" class="h-16 relative" aria-label="Voice waveform visualization">
-                    <svg width="100%" height="60" viewBox="0 0 300 60" preserveAspectRatio="none" aria-hidden="true">
-                        <path class="waveform-path" stroke="#4285F4" stroke-width="2" fill="none" d="M0,30 Q25,10 50,30 T100,30 T150,30 T200,30 T250,30 T300,30" id="waveform-svg-path"></path>
-                    </svg>
+    <div id="voice-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-2xl">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-bestbuy-yellow-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-microphone text-bestbuy-blue text-2xl"></i>
                 </div>
-                <div id="recording-indicator" class="hidden mt-2">
-                    <div class="flex items-center justify-center">
-                        <div class="w-3 h-3 bg-google-red rounded-full animate-pulse mr-2" aria-hidden="true"></div>
-                        <span class="text-sm">Recording...</span>
+                <h3 class="text-xl font-semibold text-bestbuy-gray-dark mb-2">Voice Input</h3>
+                <p class="text-bestbuy-gray mb-6">Tap the microphone to start recording</p>
+                
+                <!-- Voice Visualization -->
+                <div id="voice-visualizer" class="h-16 bg-gray-50 rounded-lg mb-6 flex items-center justify-center">
+                    <div class="flex items-center gap-1">
+                        <div class="w-1 bg-bestbuy-blue rounded-full animate-pulse" style="height: 20px;"></div>
+                        <div class="w-1 bg-bestbuy-yellow rounded-full animate-pulse" style="height: 35px; animation-delay: 0.1s;"></div>
+                        <div class="w-1 bg-bestbuy-blue rounded-full animate-pulse" style="height: 15px; animation-delay: 0.2s;"></div>
+                        <div class="w-1 bg-bestbuy-yellow rounded-full animate-pulse" style="height: 25px; animation-delay: 0.3s;"></div>
+                        <div class="w-1 bg-bestbuy-blue rounded-full animate-pulse" style="height: 30px; animation-delay: 0.4s;"></div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Transcription result -->
-            <div id="transcription-result" 
-                 class="bg-google-light-gray rounded-lg p-3 mb-4 min-h-[60px] text-sm border border-google-border"
-                 aria-live="polite"
-                 aria-label="Transcription result"></div>
-            
-            <div id="recording-status" class="text-center text-sm text-google-gray mb-4" aria-live="polite">
-                Click the microphone to start recording
-            </div>
-            
-            <!-- Control buttons -->
-            <div class="flex justify-between">
-                <button id="start-recording" 
-                        class="bg-google-red hover:bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 ripple"
-                        aria-label="Start or stop recording">
-                    <i class="fas fa-microphone" aria-hidden="true"></i>
-                </button>
-                
-                <div class="flex space-x-2">
-                    <button id="pause-recording" 
-                            class="bg-google-light-gray text-google-gray rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-300 disabled:opacity-50 transition-colors border border-google-border focus:outline-none focus:ring-2 focus:ring-google-blue" 
-                            disabled
-                            aria-label="Pause recording">
-                        <i class="fas fa-pause" aria-hidden="true"></i>
+
+                <div class="flex justify-center gap-4">
+                    <button id="start-recording-btn" class="w-12 h-12 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center transition-colors">
+                        <i class="fas fa-microphone"></i>
                     </button>
-                    <button id="resume-recording" 
-                            class="bg-google-light-gray text-google-gray rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-300 disabled:opacity-50 transition-colors border border-google-border focus:outline-none focus:ring-2 focus:ring-google-blue" 
-                            disabled
-                            aria-label="Resume recording">
-                        <i class="fas fa-play" aria-hidden="true"></i>
-                    </button>
-                    <button id="reset-recording" 
-                            class="bg-google-light-gray text-google-gray rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-300 disabled:opacity-50 transition-colors border border-google-border focus:outline-none focus:ring-2 focus:ring-google-blue" 
-                            disabled
-                            aria-label="Reset recording">
-                        <i class="fas fa-redo" aria-hidden="true"></i>
+                    <button id="close-voice-modal" class="w-12 h-12 bg-gray-300 hover:bg-gray-400 text-gray-700 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fas fa-times"></i>
                     </button>
                 </div>
-                
-                <button id="send-voice" 
-                        class="button-gradient text-white rounded-full w-12 h-12 flex items-center justify-center transition-colors disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-500 ripple" 
-                        disabled
-                        aria-label="Send voice message">
-                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                </button>
             </div>
         </div>
     </div>
 
-    <!-- Camera Modal -->
-    <div id="camera-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="camera-modal-title">
-        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-2xl max-h-[90vh] overflow-hidden google-shadow">
-            <div class="flex justify-between items-center mb-4">
-                <h3 id="camera-modal-title" class="text-xl font-medium text-google-dark-gray">Camera Photo</h3>
-                <button id="close-camera-modal" 
-                        class="text-google-gray hover:text-google-red focus:outline-none focus:ring-2 focus:ring-google-red rounded"
-                        aria-label="Close camera">
-                    <i class="fas fa-times" aria-hidden="true"></i>
-                </button>
-            </div>
-            
-            <!-- Camera preview area -->
-            <div class="bg-google-light-gray rounded-lg p-4 mb-4 min-h-[300px] flex items-center justify-center border border-google-border">
-                <div id="camera-preview-container" class="w-full h-full flex items-center justify-center">
-                    <div id="camera-placeholder" class="text-center text-google-gray">
-                        <i class="fas fa-video text-6xl mb-4 text-google-blue" aria-hidden="true"></i>
-                        <p class="text-lg">Click "Start Camera" to begin</p>
-                        <p class="text-sm mt-2">Make sure you allow camera access when prompted</p>
-                    </div>
-                    <video id="camera-video" class="hidden max-w-full max-h-full rounded-lg shadow-lg" autoplay muted aria-label="Camera preview"></video>
-                    <canvas id="camera-canvas" class="hidden max-w-full max-h-full rounded-lg shadow-lg" aria-label="Photo capture canvas"></canvas>
-                    <div id="captured-photo-container" class="hidden max-w-full max-h-full">
-                        <img id="captured-photo" class="max-w-full max-h-full rounded-lg shadow-lg" alt="Captured photo" />
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Status and controls -->
-            <div id="camera-status" class="text-center text-sm text-google-gray mb-4" aria-live="polite">
-                Ready to start camera
-            </div>
-            
-            <!-- Control buttons -->
-            <div class="flex justify-center space-x-4" role="group" aria-label="Camera controls">
-                <button id="start-camera" 
-                        class="bg-google-blue hover:bg-blue-600 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 ripple">
-                    <i class="fas fa-play" aria-hidden="true"></i>
-                    <span>Start Camera</span>
-                </button>
-                
-                <button id="take-photo" 
-                        class="bg-google-green hover:bg-green-600 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors hidden focus:outline-none focus:ring-2 focus:ring-green-500 ripple">
-                    <i class="fas fa-camera" aria-hidden="true"></i>
-                    <span>Take Photo</span>
-                </button>
-                
-                <button id="retake-photo" 
-                        class="bg-google-yellow hover:bg-yellow-600 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors hidden focus:outline-none focus:ring-2 focus:ring-yellow-500 ripple">
-                    <i class="fas fa-redo" aria-hidden="true"></i>
-                    <span>Retake</span>
-                </button>
-                
-                <button id="stop-camera" 
-                        class="bg-google-red hover:bg-red-600 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors hidden focus:outline-none focus:ring-2 focus:ring-red-500 ripple">
-                    <i class="fas fa-stop" aria-hidden="true"></i>
-                    <span>Stop Camera</span>
-                </button>
-                
-                <button id="send-camera-photo" 
-                        class="button-gradient text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors disabled:opacity-50 hidden focus:outline-none focus:ring-2 focus:ring-blue-500 ripple" 
-                        disabled>
-                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                    <span>Send Photo</span>
-                </button>
-            </div>
-        </div>
-    </div>
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2"></div>
 
-    <!-- Screen Capture Modal -->
-    <div id="screen-capture-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="screen-capture-title">
-        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-2xl max-h-[90vh] overflow-hidden google-shadow">
-            <div class="flex justify-between items-center mb-4">
-                <h3 id="screen-capture-title" class="text-xl font-medium text-google-dark-gray">Screen Capture</h3>
-                <button id="close-screen-capture-modal" 
-                        class="text-google-gray hover:text-google-red focus:outline-none focus:ring-2 focus:ring-google-red rounded"
-                        aria-label="Close screen capture">
-                    <i class="fas fa-times" aria-hidden="true"></i>
-                </button>
-            </div>
-            
-            <!-- Screen preview area -->
-            <div class="bg-google-light-gray rounded-lg p-4 mb-4 min-h-[300px] flex items-center justify-center border border-google-border">
-                <div id="screen-preview-container" class="w-full h-full flex items-center justify-center">
-                    <div id="screen-capture-placeholder" class="text-center text-google-gray">
-                        <i class="fas fa-desktop text-6xl mb-4 text-google-blue" aria-hidden="true"></i>
-                        <p class="text-lg">Click "Start Screen Share" to begin</p>
-                        <p class="text-sm mt-2">You can capture your entire screen or specific windows</p>
-                    </div>
-                    <video id="screen-preview" class="hidden max-w-full max-h-full rounded-lg shadow-lg" autoplay muted aria-label="Screen preview"></video>
-                    <canvas id="screen-canvas" class="hidden max-w-full max-h-full rounded-lg shadow-lg" aria-label="Screen capture canvas"></canvas>
-                </div>
-            </div>
-            
-            <!-- Status and controls -->
-            <div id="screen-capture-status" class="text-center text-sm text-google-gray mb-4" aria-live="polite">
-                Ready to capture screen
-            </div>
-            
-            <!-- Control buttons -->
-            <div class="flex justify-center space-x-4" role="group" aria-label="Screen capture controls">
-                <button id="start-screen-capture" 
-                        class="bg-google-blue hover:bg-blue-600 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 ripple">
-                    <i class="fas fa-play" aria-hidden="true"></i>
-                    <span>Start Screen Share</span>
-                </button>
-                
-                <button id="capture-screenshot" 
-                        class="bg-google-green hover:bg-green-600 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors hidden focus:outline-none focus:ring-2 focus:ring-green-500 ripple">
-                    <i class="fas fa-camera" aria-hidden="true"></i>
-                    <span>Capture Screenshot</span>
-                </button>
-                
-                <button id="stop-screen-capture" 
-                        class="bg-google-red hover:bg-red-600 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors hidden focus:outline-none focus:ring-2 focus:ring-red-500 ripple">
-                    <i class="fas fa-stop" aria-hidden="true"></i>
-                    <span>Stop Sharing</span>
-                </button>
-                
-                <button id="send-screen-capture" 
-                        class="button-gradient text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors disabled:opacity-50 hidden focus:outline-none focus:ring-2 focus:ring-blue-500 ripple" 
-                        disabled>
-                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                    <span>Send Screenshot</span>
-                </button>
-            </div>
-        </div>
-    </div>
+    <!-- Mobile Overlay -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
 
-    <!-- Screenshot Options Modal -->
-    <div id="full-screenshot-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="screenshot-options-title">
-        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md google-shadow">
-            <div class="flex justify-between items-center mb-4">
-                <h3 id="screenshot-options-title" class="text-xl font-medium text-google-dark-gray">Screenshot Options</h3>
-                <button id="close-screenshot-modal" 
-                        class="text-google-gray hover:text-google-red focus:outline-none focus:ring-2 focus:ring-google-red rounded"
-                        aria-label="Close screenshot options">
-                    <i class="fas fa-times" aria-hidden="true"></i>
-                </button>
-            </div>
-            
-            <div class="space-y-4">
-                <div class="text-center text-google-gray mb-6">
-                    <i class="fas fa-camera text-4xl text-google-green mb-2" aria-hidden="true"></i>
-                    <p>Choose what you'd like to capture</p>
-                </div>
-                
-                <button id="capture-visible-area" 
-                        class="w-full bg-google-blue hover:bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center gap-3 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 ripple">
-                    <i class="fas fa-eye" aria-hidden="true"></i>
-                    <span>Capture Visible Area</span>
-                </button>
-                
-                <button id="capture-full-page" 
-                        class="w-full bg-google-green hover:bg-green-600 text-white px-6 py-3 rounded-lg flex items-center gap-3 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 ripple">
-                    <i class="fas fa-scroll" aria-hidden="true"></i>
-                    <span>Capture Full Page</span>
-                </button>
-                
-                <div class="text-xs text-google-gray text-center mt-4">
-                    Note: Full page capture may take a moment for long pages
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Confirmation Modal -->
-    <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="confirmation-title">
-        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md google-shadow">
-            <div class="flex items-center mb-4">
-                <i id="confirmation-icon" class="fas fa-exclamation-triangle text-google-yellow text-2xl mr-3" aria-hidden="true"></i>
-                <h3 id="confirmation-title" class="text-xl font-medium text-google-dark-gray">Confirm Action</h3>
-            </div>
-            
-            <p id="confirmation-message" class="text-google-gray mb-6">Are you sure you want to perform this action?</p>
-            
-            <div class="flex justify-end space-x-3">
-                <button id="confirmation-cancel" 
-                        class="px-4 py-2 text-google-gray bg-google-light-gray hover:bg-gray-300 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-google-blue">
-                    Cancel
-                </button>
-                <button id="confirmation-confirm" 
-                        class="px-4 py-2 text-white bg-google-red hover:bg-red-600 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-red-500">
-                    Confirm
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notifications -->
-    <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2" aria-live="polite" aria-label="Notifications"></div>
-
-    <!-- Accessibility Live Region -->
-    <div id="announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
-
-    <!-- Scripts -->
-    <script src="/static/js/script.js"></script>
-    
-    <!-- Error Boundary -->
     <script>
-        window.addEventListener('error', function(e) {
-            console.error('Global error:', e.error);
-            // Could send to error reporting service in production
+        // Application State
+        const AppState = {
+            currentConversationId: null,
+            conversations: JSON.parse(localStorage.getItem('bestbuy_conversations') || '[]'),
+            attachedFile: null,
+            isRecording: false,
+            messageHistory: []
+        };
+
+        // Utility Functions
+        const Utils = {
+            generateId: () => Math.random().toString(36).substr(2, 9),
+            formatTime: (date) => {
+                return new Intl.DateTimeFormat('en-US', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: true
+                }).format(date);
+            },
+            formatFileSize: (bytes) => {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            },
+            sanitizeHTML: (str) => {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+        };
+
+        // Toast Notifications
+        const Toast = {
+            show: (message, type = 'info', duration = 5000) => {
+                const container = document.getElementById('toast-container');
+                const toastId = Utils.generateId();
+                
+                const typeColors = {
+                    info: 'bg-bestbuy-blue text-white',
+                    success: 'bg-green-500 text-white',
+                    warning: 'bg-bestbuy-yellow text-bestbuy-blue',
+                    error: 'bg-red-500 text-white'
+                };
+
+                const toast = document.createElement('div');
+                toast.id = toastId;
+                toast.className = `${typeColors[type]} px-4 py-3 rounded-lg shadow-lg toast-slide-in`;
+                toast.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium">${Utils.sanitizeHTML(message)}</span>
+                        <button onclick="Toast.remove('${toastId}')" class="ml-3 text-current opacity-70 hover:opacity-100">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
+
+                container.appendChild(toast);
+
+                if (duration > 0) {
+                    setTimeout(() => Toast.remove(toastId), duration);
+                }
+            },
+
+            remove: (toastId) => {
+                const toast = document.getElementById(toastId);
+                if (toast) {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        if (toast.parentNode) {
+                            toast.parentNode.removeChild(toast);
+                        }
+                    }, 300);
+                }
+            }
+        };
+
+        // Conversation Management
+        const ConversationManager = {
+            create: () => {
+                const conversation = {
+                    id: Utils.generateId(),
+                    title: 'New Conversation',
+                    messages: [],
+                    createdAt: new Date().toISOString(),
+                    updatedAt: new Date().toISOString()
+                };
+                
+                AppState.conversations.unshift(conversation);
+                AppState.currentConversationId = conversation.id;
+                ConversationManager.save();
+                ConversationManager.updateUI();
+                ConversationManager.clearMessages();
+                
+                return conversation;
+            },
+
+            save: () => {
+                localStorage.setItem('bestbuy_conversations', JSON.stringify(AppState.conversations));
+            },
+
+            updateUI: () => {
+                const historyContainer = document.getElementById('chat-history');
+                const emptyState = document.getElementById('empty-history');
+
+                historyContainer.innerHTML = '';
+
+                if (AppState.conversations.length === 0) {
+                    emptyState.classList.remove('hidden');
+                    return;
+                }
+
+                emptyState.classList.add('hidden');
+
+                AppState.conversations.forEach(conversation => {
+                    const item = document.createElement('div');
+                    item.className = `p-3 rounded-lg cursor-pointer transition-colors hover:bg-white/10 ${conversation.id === AppState.currentConversationId ? 'bg-white/20' : ''}`;
+                    item.innerHTML = `
+                        <div class="text-sm font-medium text-white truncate mb-1">
+                            ${Utils.sanitizeHTML(conversation.title)}
+                        </div>
+                        <div class="text-xs text-white/60">
+                            ${Utils.formatTime(new Date(conversation.updatedAt))}
+                        </div>
+                    `;
+                    
+                    item.addEventListener('click', () => ConversationManager.load(conversation.id));
+                    historyContainer.appendChild(item);
+                });
+            },
+
+            load: (conversationId) => {
+                const conversation = AppState.conversations.find(c => c.id === conversationId);
+                if (!conversation) return null;
+
+                AppState.currentConversationId = conversationId;
+                ConversationManager.updateUI();
+                ConversationManager.loadMessages(conversation.messages);
+                
+                return conversation;
+            },
+
+            addMessage: (message) => {
+                const conversation = AppState.conversations.find(c => c.id === AppState.currentConversationId);
+                if (conversation) {
+                    conversation.messages.push(message);
+                    conversation.updatedAt = new Date().toISOString();
+                    
+                    if (conversation.messages.length === 1 && message.sender === 'user') {
+                        conversation.title = message.content.substring(0, 50) + (message.content.length > 50 ? '...' : '');
+                    }
+                    
+                    ConversationManager.save();
+                    ConversationManager.updateUI();
+                }
+            },
+
+            loadMessages: (messages) => {
+                const container = document.getElementById('messages-container');
+                // Keep welcome message and clear the rest
+                const welcomeMessage = container.children[0];
+                container.innerHTML = '';
+                container.appendChild(welcomeMessage);
+                
+                messages.forEach(message => {
+                    MessageManager.display(message.content, message.sender, message.timestamp, false);
+                });
+            },
+
+            clearMessages: () => {
+                const container = document.getElementById('messages-container');
+                const welcomeMessage = container.children[0];
+                container.innerHTML = '';
+                container.appendChild(welcomeMessage);
+            },
+
+            clearAll: () => {
+                if (confirm('Are you sure you want to clear all conversation history? This action cannot be undone.')) {
+                    AppState.conversations = [];
+                    AppState.currentConversationId = null;
+                    ConversationManager.save();
+                    ConversationManager.updateUI();
+                    ConversationManager.clearMessages();
+                    Toast.show('All conversations cleared', 'success');
+                }
+            }
+        };
+
+        // Message Manager
+        const MessageManager = {
+            display: (content, sender, timestamp = new Date(), animate = true) => {
+                const container = document.getElementById('messages-container');
+                const messageDiv = document.createElement('div');
+                const timeStr = Utils.formatTime(new Date(timestamp));
+                
+                messageDiv.className = `flex items-start gap-3 ${animate ? 'message-enter' : ''}`;
+
+                if (sender === 'user') {
+                    messageDiv.innerHTML = `
+                        <div class="w-10 h-10 bg-bestbuy-yellow rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                            <i class="fas fa-user text-bestbuy-blue"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="bg-bestbuy-blue text-white rounded-2xl rounded-bl-sm p-4 shadow-sm max-w-xs md:max-w-md">
+                                <p>${Utils.sanitizeHTML(content)}</p>
+                            </div>
+                            <div class="text-xs text-bestbuy-gray mt-2">
+                                <span>${timeStr}</span>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    messageDiv.innerHTML = `
+                        <div class="w-10 h-10 bg-bestbuy-blue-gradient rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                            <i class="fas fa-robot text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="bg-white rounded-2xl rounded-tl-sm p-4 shadow-sm border border-gray-100 max-w-xs md:max-w-2xl">
+                                <div class="prose max-w-none">
+                                    ${MessageManager.parseContent(content)}
+                                </div>
+                            </div>
+                            <div class="text-xs text-bestbuy-gray mt-2 flex items-center gap-3">
+                                <span>${timeStr}</span>
+                                <button onclick="MessageManager.copyMessage(this)" class="hover:text-bestbuy-blue transition-colors" title="Copy message">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <button onclick="MessageManager.likeMessage(this)" class="hover:text-bestbuy-blue transition-colors" title="Like message">
+                                    <i class="far fa-thumbs-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                container.appendChild(messageDiv);
+                container.scrollTop = container.scrollHeight;
+
+                return messageDiv;
+            },
+
+            parseContent: (content) => {
+                // Simple markdown-like parsing
+                return content
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    .replace(/`(.*?)`/g, '<code class="bg-gray-100 px-1 py-0.5 rounded text-sm">$1</code>')
+                    .replace(/\n/g, '<br>');
+            },
+
+            copyMessage: async (button) => {
+                const messageDiv = button.closest('.flex');
+                const content = messageDiv.querySelector('.prose, p').textContent;
+                
+                try {
+                    await navigator.clipboard.writeText(content);
+                    Toast.show('Message copied to clipboard', 'success');
+                    button.innerHTML = '<i class="fas fa-check"></i>';
+                    setTimeout(() => {
+                        button.innerHTML = '<i class="fas fa-copy"></i>';
+                    }, 2000);
+                } catch (err) {
+                    Toast.show('Failed to copy message', 'error');
+                }
+            },
+
+            likeMessage: (button) => {
+                const icon = button.querySelector('i');
+                if (icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    icon.style.color = '#0046BE';
+                    Toast.show('Thanks for your feedback!', 'success');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    icon.style.color = '';
+                }
+            }
+        };
+
+        // Input Manager
+        const InputManager = {
+            init: () => {
+                const messageInput = document.getElementById('message-input');
+                const sendButton = document.getElementById('send-btn');
+                const charCount = document.getElementById('char-count');
+
+                messageInput.addEventListener('input', () => {
+                    InputManager.updateCharCount();
+                    InputManager.updateSendButton();
+                    InputManager.autoResize();
+                });
+
+                messageInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        InputManager.sendMessage();
+                    }
+                });
+
+                sendButton.addEventListener('click', InputManager.sendMessage);
+            },
+
+            updateCharCount: () => {
+                const messageInput = document.getElementById('message-input');
+                const charCount = document.getElementById('char-count');
+                const counter = document.getElementById('char-counter');
+                
+                const currentLength = messageInput.value.length;
+                charCount.textContent = currentLength;
+                
+                if (currentLength > 3200) {
+                    counter.classList.add('text-red-500');
+                } else if (currentLength > 2800) {
+                    counter.classList.add('text-bestbuy-yellow');
+                    counter.classList.remove('text-red-500');
+                } else {
+                    counter.classList.remove('text-red-500', 'text-bestbuy-yellow');
+                }
+            },
+
+            updateSendButton: () => {
+                const messageInput = document.getElementById('message-input');
+                const sendButton = document.getElementById('send-btn');
+                
+                const hasContent = messageInput.value.trim().length > 0;
+                const hasAttachment = AppState.attachedFile !== null;
+                
+                sendButton.disabled = !hasContent && !hasAttachment;
+            },
+
+            autoResize: () => {
+                const messageInput = document.getElementById('message-input');
+                messageInput.style.height = 'auto';
+                messageInput.style.height = Math.min(messageInput.scrollHeight, 150) + 'px';
+            },
+
+            sendMessage: async () => {
+                const messageInput = document.getElementById('message-input');
+                const message = messageInput.value.trim();
+                
+                if (!message && !AppState.attachedFile) return;
+
+                // Create conversation if none exists
+                if (!AppState.currentConversationId) {
+                    ConversationManager.create();
+                }
+
+                if (message) {
+                    // Display user message
+                    const userMessage = {
+                        content: message,
+                        sender: 'user',
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    MessageManager.display(message, 'user');
+                    ConversationManager.addMessage(userMessage);
+                }
+
+                // Clear input
+                messageInput.value = '';
+                InputManager.updateCharCount();
+                InputManager.updateSendButton();
+                InputManager.autoResize();
+
+                // Show typing indicator
+                document.getElementById('typing-indicator').classList.remove('hidden');
+
+                // Simulate API response (replace with actual API call)
+                setTimeout(() => {
+                    document.getElementById('typing-indicator').classList.add('hidden');
+                    
+                    const responses = [
+                        "Thank you for contacting Best Buy! I'd be happy to help you with that. Let me check our current inventory and pricing for you.",
+                        "Great question! Based on your needs, I can recommend several options. Our latest models offer excellent value and come with our Best Buy warranty.",
+                        "I understand your concern. Let me walk you through the troubleshooting steps and see if we can resolve this issue together.",
+                        "That's a popular product! We have it in stock both online and in select stores. Would you like me to check availability in your area?",
+                        "I can definitely help you with your return. Our return policy allows for returns within 15-30 days depending on the product category."
+                    ];
+                    
+                    const response = responses[Math.floor(Math.random() * responses.length)];
+                    
+                    const botMessage = {
+                        content: response,
+                        sender: 'bot',
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    MessageManager.display(response, 'bot');
+                    ConversationManager.addMessage(botMessage);
+                }, 1000 + Math.random() * 2000);
+
+                // Clear attachments
+                FileManager.clearAttachment();
+            }
+        };
+
+        // File Manager
+        const FileManager = {
+            init: () => {
+                const attachmentBtn = document.getElementById('attachment-btn');
+                const fileInput = document.getElementById('file-input');
+                const removeFileBtn = document.getElementById('remove-file');
+                const removeImageBtn = document.getElementById('remove-image');
+
+                attachmentBtn.addEventListener('click', () => fileInput.click());
+                fileInput.addEventListener('change', FileManager.handleFileSelect);
+                removeFileBtn.addEventListener('click', FileManager.clearAttachment);
+                removeImageBtn.addEventListener('click', FileManager.clearAttachment);
+            },
+
+            handleFileSelect: (event) => {
+                const file = event.target.files[0];
+                if (!file) return;
+
+                const maxSize = 10 * 1024 * 1024; // 10MB
+                if (file.size > maxSize) {
+                    Toast.show('File size must be less than 10MB', 'error');
+                    return;
+                }
+
+                AppState.attachedFile = file;
+                FileManager.showPreview(file);
+                InputManager.updateSendButton();
+                Toast.show('File attached successfully', 'success');
+                
+                // Clear file input
+                event.target.value = '';
+            },
+
+            showPreview: (file) => {
+                const isImage = file.type.startsWith('image/');
+                
+                if (isImage) {
+                    const preview = document.getElementById('image-preview');
+                    const thumbnail = document.getElementById('image-thumbnail');
+                    
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        thumbnail.src = e.target.result;
+                        preview.classList.remove('hidden');
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    const preview = document.getElementById('file-preview');
+                    const fileName = document.getElementById('file-name');
+                    const fileSize = document.getElementById('file-size');
+                    
+                    fileName.textContent = file.name;
+                    fileSize.textContent = Utils.formatFileSize(file.size);
+                    preview.classList.remove('hidden');
+                }
+            },
+
+            clearAttachment: () => {
+                AppState.attachedFile = null;
+                document.getElementById('file-preview').classList.add('hidden');
+                document.getElementById('image-preview').classList.add('hidden');
+                InputManager.updateSendButton();
+            }
+        };
+
+        // Voice Manager
+        const VoiceManager = {
+            init: () => {
+                const voiceBtn = document.getElementById('voice-btn');
+                const voiceModal = document.getElementById('voice-modal');
+                const closeVoiceModal = document.getElementById('close-voice-modal');
+                const startRecordingBtn = document.getElementById('start-recording-btn');
+
+                voiceBtn.addEventListener('click', () => voiceModal.classList.remove('hidden'));
+                closeVoiceModal.addEventListener('click', () => voiceModal.classList.add('hidden'));
+                startRecordingBtn.addEventListener('click', VoiceManager.toggleRecording);
+
+                // Close modal on backdrop click
+                voiceModal.addEventListener('click', (e) => {
+                    if (e.target === voiceModal) {
+                        voiceModal.classList.add('hidden');
+                    }
+                });
+            },
+
+            toggleRecording: () => {
+                if (!AppState.isRecording) {
+                    VoiceManager.startRecording();
+                } else {
+                    VoiceManager.stopRecording();
+                }
+            },
+
+            startRecording: () => {
+                if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                    const recognition = new SpeechRecognition();
+                    
+                    recognition.continuous = false;
+                    recognition.interimResults = false;
+                    recognition.lang = 'en-US';
+                    
+                    recognition.onstart = () => {
+                        AppState.isRecording = true;
+                        document.getElementById('start-recording-btn').innerHTML = '<i class="fas fa-stop"></i>';
+                        Toast.show('Recording started...', 'info');
+                    };
+                    
+                    recognition.onresult = (event) => {
+                        const transcript = event.results[0][0].transcript;
+                        document.getElementById('message-input').value = transcript;
+                        InputManager.updateCharCount();
+                        InputManager.updateSendButton();
+                        document.getElementById('voice-modal').classList.add('hidden');
+                        Toast.show('Voice input captured', 'success');
+                    };
+                    
+                    recognition.onerror = (event) => {
+                        Toast.show('Voice recognition failed', 'error');
+                        VoiceManager.stopRecording();
+                    };
+                    
+                    recognition.onend = () => {
+                        VoiceManager.stopRecording();
+                    };
+                    
+                    recognition.start();
+                } else {
+                    Toast.show('Voice recognition not supported in this browser', 'error');
+                }
+            },
+
+            stopRecording: () => {
+                AppState.isRecording = false;
+                document.getElementById('start-recording-btn').innerHTML = '<i class="fas fa-microphone"></i>';
+            }
+        };
+
+        // UI Manager
+        const UIManager = {
+            init: () => {
+                // Mobile menu toggle
+                const menuToggle = document.getElementById('menu-toggle');
+                const sidebar = document.getElementById('sidebar');
+                const mobileOverlay = document.getElementById('mobile-overlay');
+
+                menuToggle.addEventListener('click', () => {
+                    sidebar.classList.add('mobile-menu-enter');
+                    sidebar.style.transform = 'translateX(0)';
+                    mobileOverlay.classList.remove('hidden');
+                });
+
+                mobileOverlay.addEventListener('click', () => {
+                    sidebar.style.transform = 'translateX(-100%)';
+                    mobileOverlay.classList.add('hidden');
+                });
+
+                // More options menu
+                const moreOptionsBtn = document.getElementById('more-options-btn');
+                const moreOptionsMenu = document.getElementById('more-options-menu');
+
+                moreOptionsBtn.addEventListener('click', () => {
+                    moreOptionsMenu.classList.toggle('hidden');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!moreOptionsBtn.contains(e.target) && !moreOptionsMenu.contains(e.target)) {
+                        moreOptionsMenu.classList.add('hidden');
+                    }
+                });
+
+                // Other buttons
+                document.getElementById('new-chat-btn').addEventListener('click', () => {
+                    ConversationManager.create();
+                    Toast.show('New conversation started', 'success');
+                });
+
+                document.getElementById('clear-history-btn').addEventListener('click', () => {
+                    ConversationManager.clearAll();
+                });
+
+                document.getElementById('export-chat-btn').addEventListener('click', () => {
+                    UIManager.exportChat();
+                });
+
+                // Set welcome time
+                document.getElementById('welcome-time').textContent = Utils.formatTime(new Date());
+            },
+
+            exportChat: () => {
+                const conversation = AppState.conversations.find(c => c.id === AppState.currentConversationId);
+                if (!conversation) {
+                    Toast.show('No conversation to export', 'warning');
+                    return;
+                }
+
+                let transcript = `Best Buy Support Conversation\n`;
+                transcript += `Created: ${new Date(conversation.createdAt).toLocaleString()}\n\n`;
+
+                conversation.messages.forEach(message => {
+                    const timestamp = new Date(message.timestamp).toLocaleString();
+                    transcript += `[${timestamp}] ${message.sender.toUpperCase()}: ${message.content}\n\n`;
+                });
+
+                const blob = new Blob([transcript], { type: 'text/plain' });
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `bestbuy-chat-${conversation.id}.txt`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+
+                Toast.show('Chat exported successfully', 'success');
+            }
+        };
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hide loading screen
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loading-screen').style.display = 'none';
+                }, 300);
+            }, 1500);
+
+            // Initialize all components
+            InputManager.init();
+            FileManager.init();
+            VoiceManager.init();
+            UIManager.init();
+            
+            // Load conversations
+            ConversationManager.updateUI();
+            
+            // Create initial conversation if none exist
+            if (AppState.conversations.length === 0) {
+                ConversationManager.create();
+            } else {
+                ConversationManager.load(AppState.conversations[0].id);
+            }
+
+            // Welcome message
+            setTimeout(() => {
+                Toast.show('Welcome to Best Buy Support! 🛍️', 'success');
+            }, 2000);
         });
-        
-        window.addEventListener('unhandledrejection', function(e) {
-            console.error('Unhandled promise rejection:', e.reason);
-            // Could send to error reporting service in production
+
+        // Handle page unload
+        window.addEventListener('beforeunload', () => {
+            ConversationManager.save();
         });
+
+        // Global error handling
+        window.addEventListener('error', (event) => {
+            console.error('Global error:', event.error);
+            Toast.show('An unexpected error occurred. Please refresh if problems persist.', 'error');
+        });
+
+        // Make functions globally available
+        window.Toast = Toast;
+        window.MessageManager = MessageManager;
+        window.ConversationManager = ConversationManager;
     </script>
 </body>
 </html>
