@@ -12,7 +12,6 @@
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
-- [Architecture Diagram](#architecture-diagram)
 - [Features](#-features)
 - [Technology Stack](#️-technology-stack)
 - [Conversation Flow](#-conversation-flow)
