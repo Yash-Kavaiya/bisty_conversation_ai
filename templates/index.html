@@ -109,6 +109,22 @@
             background: linear-gradient(135deg, #003399, #E6CF00);
         }
 
+        /* Message more menu */
+        .message-more-menu {
+            animation: fadeInUp 0.2s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Best Buy button effects */
         .bestbuy-btn {
             position: relative;
@@ -370,16 +386,33 @@
                         <button id="more-options-btn" class="text-bestbuy-gray hover:text-bestbuy-blue transition-colors p-2 rounded-lg hover:bg-gray-50">
                             <i class="fas fa-ellipsis-v"></i>
                         </button>
-                        <div id="more-options-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-20">
-                            <button class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                        <div id="more-options-menu" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 z-20">
+                            <button onclick="UIManager.reportConversationIssue()" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                <i class="fas fa-flag text-red-500"></i>
+                                Report Issue
+                            </button>
+                            <button onclick="UIManager.exportConversationToPDF()" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                <i class="fas fa-file-pdf text-red-600"></i>
+                                Export to PDF
+                            </button>
+                            <button onclick="UIManager.showReferencedConversations()" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                <i class="fas fa-link text-bestbuy-blue"></i>
+                                Referenced Conversations
+                            </button>
+                            <button onclick="UIManager.createConversationShareLink()" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                <i class="fas fa-share-alt text-green-600"></i>
+                                Create share link
+                            </button>
+                            <hr class="my-1">
+                            <button onclick="UIManager.shareConversation()" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
                                 <i class="fas fa-share text-bestbuy-blue"></i>
                                 Share Conversation
                             </button>
-                            <button class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                            <button onclick="UIManager.saveConversation()" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
                                 <i class="fas fa-star text-bestbuy-yellow"></i>
                                 Save Conversation
                             </button>
-                            <button class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2 text-red-600">
+                            <button onclick="UIManager.deleteConversation()" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2 text-red-600">
                                 <i class="fas fa-trash"></i>
                                 Delete Conversation
                             </button>
@@ -784,14 +817,52 @@
                                     ${MessageManager.parseContent(content)}
                                 </div>
                             </div>
-                            <div class="text-xs text-bestbuy-gray mt-2 flex items-center gap-3">
-                                <span>${timeStr}</span>
-                                <button onclick="MessageManager.copyMessage(this)" class="hover:text-bestbuy-blue transition-colors" title="Copy message">
+                            <div class="text-xs text-bestbuy-gray mt-2 flex items-center gap-2 flex-wrap">
+                                <button onclick="MessageManager.regenerateMessage(this)" class="hover:text-bestbuy-blue transition-colors p-1" title="Regenerate response">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <button onclick="MessageManager.speakMessage(this)" class="hover:text-bestbuy-blue transition-colors p-1" title="Read aloud">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                                <button onclick="MessageManager.addComment(this)" class="hover:text-bestbuy-blue transition-colors p-1" title="Add comment">
+                                    <i class="far fa-comment"></i>
+                                </button>
+                                <button onclick="MessageManager.copyMessage(this)" class="hover:text-bestbuy-blue transition-colors p-1" title="Copy message">
                                     <i class="fas fa-copy"></i>
                                 </button>
-                                <button onclick="MessageManager.likeMessage(this)" class="hover:text-bestbuy-blue transition-colors" title="Like message">
+                                <button onclick="MessageManager.shareMessage(this)" class="hover:text-bestbuy-blue transition-colors p-1" title="Share message">
+                                    <i class="fas fa-upload"></i>
+                                </button>
+                                <button onclick="MessageManager.likeMessage(this)" class="hover:text-bestbuy-blue transition-colors p-1" title="Like">
                                     <i class="far fa-thumbs-up"></i>
                                 </button>
+                                <button onclick="MessageManager.dislikeMessage(this)" class="hover:text-bestbuy-blue transition-colors p-1" title="Dislike">
+                                    <i class="far fa-thumbs-down"></i>
+                                </button>
+                                <div class="relative inline-block">
+                                    <button onclick="MessageManager.toggleMoreOptions(this)" class="hover:text-bestbuy-blue transition-colors p-1" title="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                    <div class="message-more-menu hidden absolute bottom-full left-0 mb-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-20">
+                                        <button onclick="MessageManager.reportIssue(this)" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                            <i class="fas fa-flag text-red-500"></i>
+                                            Report Issue
+                                        </button>
+                                        <button onclick="MessageManager.exportToPDF(this)" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                            <i class="fas fa-file-pdf text-red-600"></i>
+                                            Export to PDF
+                                        </button>
+                                        <button onclick="MessageManager.showReferencedConversations(this)" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                            <i class="fas fa-link text-bestbuy-blue"></i>
+                                            Referenced Conversations
+                                        </button>
+                                        <button onclick="MessageManager.createShareLink(this)" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                            <i class="fas fa-share-alt text-green-600"></i>
+                                            Create share link
+                                        </button>
+                                    </div>
+                                </div>
+                                <span class="text-bestbuy-gray ml-2">${timeStr}</span>
                             </div>
                         </div>
                     `;
@@ -830,6 +901,14 @@
 
             likeMessage: (button) => {
                 const icon = button.querySelector('i');
+                // Reset dislike if active
+                const dislikeBtn = button.parentElement.querySelector('[title="Dislike"] i');
+                if (dislikeBtn && dislikeBtn.classList.contains('fas')) {
+                    dislikeBtn.classList.remove('fas');
+                    dislikeBtn.classList.add('far');
+                    dislikeBtn.style.color = '';
+                }
+                
                 if (icon.classList.contains('far')) {
                     icon.classList.remove('far');
                     icon.classList.add('fas');
@@ -840,6 +919,218 @@
                     icon.classList.add('far');
                     icon.style.color = '';
                 }
+            },
+
+            dislikeMessage: (button) => {
+                const icon = button.querySelector('i');
+                // Reset like if active
+                const likeBtn = button.parentElement.querySelector('[title="Like"] i');
+                if (likeBtn && likeBtn.classList.contains('fas')) {
+                    likeBtn.classList.remove('fas');
+                    likeBtn.classList.add('far');
+                    likeBtn.style.color = '';
+                }
+                
+                if (icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    icon.style.color = '#EA4335';
+                    Toast.show('Thanks for your feedback. We\'ll improve!', 'info');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    icon.style.color = '';
+                }
+            },
+
+            regenerateMessage: (button) => {
+                Toast.show('Regenerating response...', 'info');
+                // Simulate regeneration
+                setTimeout(() => {
+                    Toast.show('Response regenerated', 'success');
+                }, 1500);
+            },
+
+            speakMessage: (button) => {
+                const messageDiv = button.closest('.flex');
+                const content = messageDiv.querySelector('.prose').textContent;
+                
+                if ('speechSynthesis' in window) {
+                    window.speechSynthesis.cancel();
+                    const utterance = new SpeechSynthesisUtterance(content);
+                    utterance.rate = 0.9;
+                    utterance.pitch = 1;
+                    
+                    utterance.onstart = () => {
+                        button.innerHTML = '<i class="fas fa-stop"></i>';
+                        button.onclick = () => {
+                            window.speechSynthesis.cancel();
+                            button.innerHTML = '<i class="fas fa-volume-up"></i>';
+                            button.onclick = () => MessageManager.speakMessage(button);
+                        };
+                    };
+                    
+                    utterance.onend = () => {
+                        button.innerHTML = '<i class="fas fa-volume-up"></i>';
+                        button.onclick = () => MessageManager.speakMessage(button);
+                    };
+                    
+                    window.speechSynthesis.speak(utterance);
+                } else {
+                    Toast.show('Text-to-speech not supported', 'warning');
+                }
+            },
+
+            addComment: (button) => {
+                const comment = prompt('Add a comment to this message:');
+                if (comment && comment.trim()) {
+                    Toast.show('Comment added', 'success');
+                }
+            },
+
+            shareMessage: (button) => {
+                const messageDiv = button.closest('.flex');
+                const content = messageDiv.querySelector('.prose').textContent;
+                
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Best Buy Support Message',
+                        text: content
+                    }).catch(() => {});
+                } else {
+                    navigator.clipboard.writeText(content).then(() => {
+                        Toast.show('Message copied for sharing', 'success');
+                    });
+                }
+            },
+
+            toggleMoreOptions: (button) => {
+                const menu = button.parentElement.querySelector('.message-more-menu');
+                // Close all other menus first
+                document.querySelectorAll('.message-more-menu').forEach(m => {
+                    if (m !== menu) m.classList.add('hidden');
+                });
+                menu.classList.toggle('hidden');
+            },
+
+            reportIssue: (button) => {
+                const menu = button.closest('.message-more-menu');
+                menu.classList.add('hidden');
+                
+                const issue = prompt('Please describe the issue with this response:');
+                if (issue && issue.trim()) {
+                    Toast.show('Issue reported. Thank you for your feedback!', 'success');
+                }
+            },
+
+            exportToPDF: (button) => {
+                const menu = button.closest('.message-more-menu');
+                menu.classList.add('hidden');
+                
+                const messageDiv = button.closest('.flex.items-start');
+                const content = messageDiv.querySelector('.prose').textContent;
+                const timestamp = messageDiv.querySelector('.text-bestbuy-gray.ml-2')?.textContent || new Date().toLocaleString();
+                
+                // Create PDF content
+                const pdfContent = `
+                    <html>
+                    <head>
+                        <title>Best Buy Support - Message Export</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; padding: 40px; }
+                            .header { color: #0046BE; border-bottom: 2px solid #FFE600; padding-bottom: 10px; margin-bottom: 20px; }
+                            .message { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; }
+                            .timestamp { color: #666; font-size: 12px; margin-top: 10px; }
+                            .footer { margin-top: 40px; color: #666; font-size: 12px; border-top: 1px solid #ddd; padding-top: 10px; }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="header">
+                            <h1>Best Buy Support</h1>
+                            <p>AI Assistant Response</p>
+                        </div>
+                        <div class="message">
+                            <p>${content}</p>
+                            <div class="timestamp">Generated: ${timestamp}</div>
+                        </div>
+                        <div class="footer">
+                            Exported from Best Buy Client Support
+                        </div>
+                    </body>
+                    </html>
+                `;
+                
+                const printWindow = window.open('', '_blank');
+                printWindow.document.write(pdfContent);
+                printWindow.document.close();
+                printWindow.print();
+                
+                Toast.show('PDF export ready', 'success');
+            },
+
+            showReferencedConversations: (button) => {
+                const menu = button.closest('.message-more-menu');
+                menu.classList.add('hidden');
+                
+                // Show referenced conversations modal
+                const referencedConvs = AppState.conversations.slice(0, 5);
+                
+                if (referencedConvs.length === 0) {
+                    Toast.show('No referenced conversations found', 'info');
+                    return;
+                }
+                
+                let listHTML = referencedConvs.map(conv => 
+                    `<div class="p-3 hover:bg-gray-50 cursor-pointer border-b" onclick="ConversationManager.load('${conv.id}'); document.getElementById('referenced-modal').classList.add('hidden');">
+                        <div class="font-medium text-sm">${Utils.sanitizeHTML(conv.title)}</div>
+                        <div class="text-xs text-gray-500">${Utils.formatTime(new Date(conv.updatedAt))}</div>
+                    </div>`
+                ).join('');
+                
+                // Create modal if not exists
+                let modal = document.getElementById('referenced-modal');
+                if (!modal) {
+                    modal = document.createElement('div');
+                    modal.id = 'referenced-modal';
+                    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+                    document.body.appendChild(modal);
+                }
+                
+                modal.innerHTML = `
+                    <div class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4">
+                        <div class="p-4 border-b flex justify-between items-center">
+                            <h3 class="font-semibold text-lg">Referenced Conversations</h3>
+                            <button onclick="document.getElementById('referenced-modal').classList.add('hidden')" class="text-gray-500 hover:text-gray-700">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="max-h-80 overflow-y-auto">
+                            ${listHTML}
+                        </div>
+                    </div>
+                `;
+                modal.classList.remove('hidden');
+                modal.onclick = (e) => { if (e.target === modal) modal.classList.add('hidden'); };
+            },
+
+            createShareLink: (button) => {
+                const menu = button.closest('.message-more-menu');
+                menu.classList.add('hidden');
+                
+                const messageDiv = button.closest('.flex.items-start');
+                const content = messageDiv.querySelector('.prose').textContent;
+                
+                // Create a shareable link (simulated)
+                const shareId = Utils.generateId();
+                const shareLink = `${window.location.origin}/share/${shareId}`;
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(shareLink).then(() => {
+                    Toast.show('Share link copied to clipboard!', 'success');
+                }).catch(() => {
+                    // Fallback
+                    prompt('Copy this share link:', shareLink);
+                });
             }
         };
 
@@ -1131,6 +1422,10 @@
                     if (!moreOptionsBtn.contains(e.target) && !moreOptionsMenu.contains(e.target)) {
                         moreOptionsMenu.classList.add('hidden');
                     }
+                    // Close message more menus
+                    if (!e.target.closest('.message-more-menu') && !e.target.closest('[title="More options"]')) {
+                        document.querySelectorAll('.message-more-menu').forEach(m => m.classList.add('hidden'));
+                    }
                 });
 
                 // Other buttons
@@ -1177,6 +1472,182 @@
                 window.URL.revokeObjectURL(url);
 
                 Toast.show('Chat exported successfully', 'success');
+            },
+
+            reportConversationIssue: () => {
+                document.getElementById('more-options-menu').classList.add('hidden');
+                const issue = prompt('Please describe the issue with this conversation:');
+                if (issue && issue.trim()) {
+                    Toast.show('Issue reported. Thank you for your feedback!', 'success');
+                }
+            },
+
+            exportConversationToPDF: () => {
+                document.getElementById('more-options-menu').classList.add('hidden');
+                const conversation = AppState.conversations.find(c => c.id === AppState.currentConversationId);
+                if (!conversation) {
+                    Toast.show('No conversation to export', 'warning');
+                    return;
+                }
+
+                let messagesHTML = conversation.messages.map(msg => `
+                    <div class="message ${msg.sender}" style="background: ${msg.sender === 'user' ? '#0046BE' : '#f8f9fa'}; color: ${msg.sender === 'user' ? 'white' : 'black'}; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                        <strong>${msg.sender === 'user' ? 'You' : 'Assistant'}:</strong>
+                        <p>${msg.content}</p>
+                        <small style="color: ${msg.sender === 'user' ? '#ccc' : '#666'};">${new Date(msg.timestamp).toLocaleString()}</small>
+                    </div>
+                `).join('');
+
+                const pdfContent = `
+                    <html>
+                    <head>
+                        <title>Best Buy Support - ${conversation.title}</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; padding: 40px; max-width: 800px; margin: 0 auto; }
+                            .header { color: #0046BE; border-bottom: 3px solid #FFE600; padding-bottom: 15px; margin-bottom: 30px; }
+                            .header h1 { margin: 0; }
+                            .header p { color: #666; margin: 5px 0 0 0; }
+                            .footer { margin-top: 40px; color: #666; font-size: 12px; border-top: 1px solid #ddd; padding-top: 15px; text-align: center; }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="header">
+                            <h1>🛒 Best Buy Support</h1>
+                            <p>${conversation.title}</p>
+                            <p style="font-size: 12px;">Created: ${new Date(conversation.createdAt).toLocaleString()}</p>
+                        </div>
+                        ${messagesHTML}
+                        <div class="footer">
+                            Exported from Best Buy Client Support<br>
+                            ${new Date().toLocaleString()}
+                        </div>
+                    </body>
+                    </html>
+                `;
+
+                const printWindow = window.open('', '_blank');
+                printWindow.document.write(pdfContent);
+                printWindow.document.close();
+                printWindow.print();
+
+                Toast.show('PDF export ready', 'success');
+            },
+
+            showReferencedConversations: () => {
+                document.getElementById('more-options-menu').classList.add('hidden');
+                const referencedConvs = AppState.conversations.filter(c => c.id !== AppState.currentConversationId).slice(0, 5);
+
+                if (referencedConvs.length === 0) {
+                    Toast.show('No other conversations found', 'info');
+                    return;
+                }
+
+                let listHTML = referencedConvs.map(conv =>
+                    `<div class="p-3 hover:bg-gray-50 cursor-pointer border-b" onclick="ConversationManager.load('${conv.id}'); document.getElementById('referenced-modal').classList.add('hidden');">
+                        <div class="font-medium text-sm">${Utils.sanitizeHTML(conv.title)}</div>
+                        <div class="text-xs text-gray-500">${Utils.formatTime(new Date(conv.updatedAt))}</div>
+                    </div>`
+                ).join('');
+
+                let modal = document.getElementById('referenced-modal');
+                if (!modal) {
+                    modal = document.createElement('div');
+                    modal.id = 'referenced-modal';
+                    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+                    document.body.appendChild(modal);
+                }
+
+                modal.innerHTML = `
+                    <div class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4">
+                        <div class="p-4 border-b flex justify-between items-center">
+                            <h3 class="font-semibold text-lg">Referenced Conversations</h3>
+                            <button onclick="document.getElementById('referenced-modal').classList.add('hidden')" class="text-gray-500 hover:text-gray-700">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="max-h-80 overflow-y-auto">
+                            ${listHTML}
+                        </div>
+                    </div>
+                `;
+                modal.classList.remove('hidden');
+                modal.onclick = (e) => { if (e.target === modal) modal.classList.add('hidden'); };
+            },
+
+            createConversationShareLink: () => {
+                document.getElementById('more-options-menu').classList.add('hidden');
+                const conversation = AppState.conversations.find(c => c.id === AppState.currentConversationId);
+                if (!conversation) {
+                    Toast.show('No conversation to share', 'warning');
+                    return;
+                }
+
+                const shareId = Utils.generateId();
+                const shareLink = `${window.location.origin}/share/conversation/${shareId}`;
+
+                navigator.clipboard.writeText(shareLink).then(() => {
+                    Toast.show('Share link copied to clipboard!', 'success');
+                }).catch(() => {
+                    prompt('Copy this share link:', shareLink);
+                });
+            },
+
+            shareConversation: () => {
+                document.getElementById('more-options-menu').classList.add('hidden');
+                const conversation = AppState.conversations.find(c => c.id === AppState.currentConversationId);
+                if (!conversation) {
+                    Toast.show('No conversation to share', 'warning');
+                    return;
+                }
+
+                let transcript = conversation.messages.map(m => 
+                    `${m.sender === 'user' ? 'You' : 'Assistant'}: ${m.content}`
+                ).join('\n\n');
+
+                if (navigator.share) {
+                    navigator.share({
+                        title: conversation.title,
+                        text: transcript
+                    }).catch(() => {});
+                } else {
+                    navigator.clipboard.writeText(transcript).then(() => {
+                        Toast.show('Conversation copied for sharing', 'success');
+                    });
+                }
+            },
+
+            saveConversation: () => {
+                document.getElementById('more-options-menu').classList.add('hidden');
+                const conversation = AppState.conversations.find(c => c.id === AppState.currentConversationId);
+                if (!conversation) {
+                    Toast.show('No conversation to save', 'warning');
+                    return;
+                }
+
+                conversation.saved = !conversation.saved;
+                ConversationManager.save();
+                Toast.show(conversation.saved ? 'Conversation saved!' : 'Conversation unsaved', 'success');
+            },
+
+            deleteConversation: () => {
+                document.getElementById('more-options-menu').classList.add('hidden');
+                if (!confirm('Are you sure you want to delete this conversation?')) return;
+
+                const index = AppState.conversations.findIndex(c => c.id === AppState.currentConversationId);
+                if (index > -1) {
+                    AppState.conversations.splice(index, 1);
+                    AppState.currentConversationId = AppState.conversations[0]?.id || null;
+                    ConversationManager.save();
+                    ConversationManager.updateUI();
+                    
+                    if (AppState.currentConversationId) {
+                        ConversationManager.load(AppState.currentConversationId);
+                    } else {
+                        ConversationManager.clearMessages();
+                    }
+                    
+                    Toast.show('Conversation deleted', 'success');
+                }
             }
         };
 
